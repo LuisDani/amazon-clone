@@ -362,3 +362,8 @@ main{
     color: #000;
     background-color: #fff;
 }
+
+.delete-item{
+    width: 20px;
+    height: 20px;
+}

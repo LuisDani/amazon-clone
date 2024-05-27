@@ -270,6 +270,15 @@ document.addEventListener("DOMContentLoaded", function (){
             });
             titleCont.appendChild(decrementButton);
 
+            //! eliminar producto del carrito
+            const deleteItem =  document.createElement('button');
+            deleteItem.className = 'delete-item';
+            deleteItem.addEventListener('click', () => {
+                cartItem.remove();
+                
+            });
+            cartItem.appendChild(deleteItem);
+
             cartItemsContainer.appendChild(cartItem);
             //! precio total del carrito
             total += item.price * item.quantity;
@@ -296,6 +305,6 @@ document.addEventListener("DOMContentLoaded", function (){
             cartModal.style.display = 'none';
         }
     });
-
     getProduct();
+
 });
