@@ -43,7 +43,7 @@
                 <h4>Devoluciones</h4>
                 <h2>y Pedidos</h2>
             </div>
-            <a href="/factura.html" class="carro">
+            <a href="#" class="carro">
                 <div class="article">
                     <p class="articles" id="num"></p>
                     <ion-icon name="cart-outline"></ion-icon>
@@ -89,7 +89,17 @@
     </div>
     <div class="products-box-row product-top">
 
+        
     </div>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Tu Carrito</h2>
+        <div id="cart-items"></div>
+            <h3>Total: $<span id="total-price">0.00</span></h3>
+        </div>
+    </div>
+
 </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

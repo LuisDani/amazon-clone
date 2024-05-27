@@ -154,22 +154,23 @@ document.addEventListener("DOMContentLoaded", function (){
         },
         {
             id: 20,
-            name: "Panasonic Horno de Microondas Panasonic",
+            name: "Air Jordan 1 Low",
             description: "Air Jordan 1 Low 'Bred Toe' 553558-161 Size 44",
             img: "./img/tenis.jpg",
             price: 2700.00,
             deliveryTime: "Viernes 31 de mayo"
         }
     ];    
+    let cart = []; 
+
     function getProduct(){
         const productContainer = document.querySelector('.products-box-row');
         products.forEach(product => {
-
-            //? create product container
+            // Crear la tarjeta del producto
             const productCard = document.createElement('div');
             productCard.className = 'products-box-col';
 
-            //? create product image
+            // Crear la imagen del producto
             const imgBox = document.createElement('div');
             imgBox.className = 'box-image';
             productCard.appendChild(imgBox);
@@ -178,38 +179,123 @@ document.addEventListener("DOMContentLoaded", function (){
             imgProduct.alt = product.name;
             imgBox.appendChild(imgProduct);
 
-            //? create product title
+            // Crear el título del producto
             const title = document.createElement('h3');
             title.textContent = product.name;
             productCard.appendChild(title);
 
-            //? description
+            // Crear la descripción del producto
             const description = document.createElement('p');
             description.textContent = product.description;
             description.className = 'description';
             productCard.appendChild(description);
 
-            //? create product price
+            // Crear el precio del producto
             const price = document.createElement('p');
             price.textContent = "$" + product.price;
             productCard.appendChild(price);
             
-            //? create product button
+            // Crear el botón de añadir al carrito
             const btn = document.createElement('a');
             btn.className = 'btn-buy';
-            btn.textContent = "Añadir al carrito"
+            btn.textContent = "Añadir al carrito";
+            btn.addEventListener('click', () => addToCart(product)); 
             productCard.appendChild(btn);
-
-            //? button buy
-            const btnBuy = document.createElement('a');
-            btnBuy.className = 'btn-buy-now';
-            btnBuy.textContent = 'Comprar';
-            productCard.appendChild(btnBuy);
             productContainer.appendChild(productCard);
-            
         });
-        
     }
+
+    //! agregar productos al carrito
+    function addToCart(product) {
+        const existingProduct = cart.find(item => item.id === product.id);
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            cart.push({...product, quantity: 1});
+        }
+        updateCart(); 
+    }
+
+    function updateCart() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        cartItemsContainer.innerHTML = ''; 
+        let total = 0;
+        //! crear los componentes del carrito por el array 
+        cart.forEach(item => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+
+            const contImg = document.createElement('div');
+            contImg.className = 'cont-img';
+            cartItem.appendChild(contImg);
+
+            const img = document.createElement('img');
+            img.src = item.img;
+            img.alt = item.name;
+            contImg.appendChild(img);
+
+
+            const titleCont = document.createElement('div');
+            titleCont.className = 'title-cart';
+            cartItem.appendChild(titleCont);
+            const title = document.createElement('h4');
+            title.textContent = item.name;
+            titleCont.appendChild(title);
+
+            const quantity = document.createElement('p');
+            quantity.textContent = `Cantidad: ${item.quantity}`;
+            titleCont.appendChild(quantity);
+
+            const price = document.createElement('p');
+            price.textContent = `Precio: $${item.price * item.quantity}`;
+            cartItem.appendChild(price);
+
+            //! incrementar la cantidad del producto
+            const incrementButton = document.createElement('button');
+            incrementButton.textContent = '+';
+            incrementButton.addEventListener('click', () => {
+                item.quantity += 1;
+                updateCart();
+            });
+            titleCont.appendChild(incrementButton);
+
+            //! disminuir la cantidad del producto
+            const decrementButton = document.createElement('button');
+            decrementButton.textContent = '-';
+            decrementButton.addEventListener('click', () => {
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                    updateCart();
+                }
+            });
+            titleCont.appendChild(decrementButton);
+
+            cartItemsContainer.appendChild(cartItem);
+            //! precio total del carrito
+            total += item.price * item.quantity;
+        });
+
+        document.getElementById('total-price').textContent = total.toFixed(2);
+    }
+
+    //! mostrar el carrito
+    const cartIcon = document.querySelector('.carro');
+    const cartModal = document.getElementById('cart-modal');
+    const closeButton = document.querySelector('.close-button');
+
+    cartIcon.addEventListener('click', () => {
+        cartModal.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === cartModal) {
+            cartModal.style.display = 'none';
+        }
+    });
+
     getProduct();
 });
-
