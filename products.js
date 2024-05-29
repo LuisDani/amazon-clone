@@ -166,11 +166,11 @@ document.addEventListener("DOMContentLoaded", function (){
     function getProduct(){
         const productContainer = document.querySelector('.products-box-row');
         products.forEach(product => {
-            // Crear la tarjeta del producto
+            //! Crear la tarjeta del producto
             const productCard = document.createElement('div');
             productCard.className = 'products-box-col';
 
-            // Crear la imagen del producto
+            //! Crear la imagen del producto
             const imgBox = document.createElement('div');
             imgBox.className = 'box-image';
             productCard.appendChild(imgBox);
@@ -179,23 +179,23 @@ document.addEventListener("DOMContentLoaded", function (){
             imgProduct.alt = product.name;
             imgBox.appendChild(imgProduct);
 
-            // Crear el título del producto
+            //! Crear el título del producto
             const title = document.createElement('h3');
             title.textContent = product.name;
             productCard.appendChild(title);
 
-            // Crear la descripción del producto
+            //! Crear la descripción del producto
             const description = document.createElement('p');
             description.textContent = product.description;
             description.className = 'description';
             productCard.appendChild(description);
 
-            // Crear el precio del producto
+            //! Crear el precio del producto
             const price = document.createElement('p');
             price.textContent = "$" + product.price;
             productCard.appendChild(price);
             
-            // Crear el botón de añadir al carrito
+            //! Crear el botón de añadir al carrito
             const btn = document.createElement('a');
             btn.className = 'btn-buy';
             btn.textContent = "Añadir al carrito";
@@ -233,7 +233,6 @@ document.addEventListener("DOMContentLoaded", function (){
             img.src = item.img;
             img.alt = item.name;
             contImg.appendChild(img);
-
 
             const titleCont = document.createElement('div');
             titleCont.className = 'title-cart';
@@ -273,9 +272,9 @@ document.addEventListener("DOMContentLoaded", function (){
             //! eliminar producto del carrito
             const deleteItem =  document.createElement('button');
             deleteItem.className = 'delete-item';
+            deleteItem.textContent = 'Eliminar';
             deleteItem.addEventListener('click', () => {
-                cartItem.remove();
-                
+                removeCart(item.id);
             });
             cartItem.appendChild(deleteItem);
 
@@ -285,6 +284,15 @@ document.addEventListener("DOMContentLoaded", function (){
         });
 
         document.getElementById('total-price').textContent = total.toFixed(2);
+    }
+
+    //! funcion para eliminar el producto del carrito
+    function removeCart(productId) {
+        const productIndex = cart.findIndex(item => item.id === productId);
+        if (productIndex !== -1) {
+            cart.splice(productIndex, 1);
+            updateCart();
+        }
     }
 
     //! mostrar el carrito
