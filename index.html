@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div class="media">
     
     <header>
 
         <div class="nav-left">
-            <ion-icon name="menu-outline"></ion-icon>
             <div class="logo">
                 <a href=""><img src="./img/image.png" alt="logo-amazon"></a>
             </div>
@@ -32,7 +33,7 @@
                 <option value="">Cocina</option>
                 <option value="">Moda</option>
             </select>
-            <input type="text" placeholder="Buscar Amazon.com.mx">
+            <input type="text" class="ama-search" placeholder="Buscar Amazon.com.mx">
             <ion-icon name="search-outline"></ion-icon>
         </div>
         <div class="nav-right">
@@ -49,13 +50,13 @@
                     <p class="articles" id="num"></p>
                     <ion-icon name="cart-outline"></ion-icon>
                 </div>
-                <h2>Carrito</h2>
+                <h2 class="text-carrito">Carrito</h2>
             </a>
         </div>
     </header>
     <div class="header-bottom">
         <ul>
-            <li class="menu"><ion-icon name="menu-outline"></ion-icon> Todo</li>
+            <li class="menu"><ion-icon name="menu-outline"></ion-icon>Todo</li>
             <li>Vender</li>
             <li>Lo más vendido</li>
             <li>AmazonBasics</li>
@@ -101,6 +102,8 @@
     </div>
 
 </main>
+
+</div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./index.js"></script>
