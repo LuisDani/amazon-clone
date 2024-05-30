@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 2,
             name: "HP Laptop 15-ef2500la",
-            description: "PROCESADOR AMD Ryzen 7 5700U, Unidad de estado sólido de 512 GB PCIe NVMe M.2, Windows 11 Home y teclado en español.",
+            description: "PROCESADOR AMD Ryzen 7 5700U, Unidad de estado sólido de 512 GB PCIe NVMe M.2.",
             img: "./img/laptop2.jpg",
             price: 10799.00,
             deliveryTime: "Lunes 27 de mayo"
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 3,
             name: "Nintendo Consola Switch Neon 32GB",
-            description: "Nintendo Switch está diseñado para IR a donde quiera que vaya, transformando la consola de casa en un sistema portátil en un abrir y cerrar de ojos",
+            description: "Nintendo Switch está diseñado para IR a donde quiera que vaya.",
             img: "./img/nintendo.jpg",
             price: 8799.00,
             deliveryTime: "Martes 28 de mayo"
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 4,
             name: "Pantalla Hisense 40 pulgadas Full HD",
-            description: "Android TV, Asistente de Google Integrado. Android TV cuenta con más de 400,000 contenidos que disfrutarás en la pantalla más grande de tu hogar.",
+            description: "Android TV, Asistente de Google Integrado.",
             img: "./img/tv.jpg",
             price: 5608.57,
             deliveryTime: "Miercoles 29 de mayo"
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 5,
             name: "NEUTROGENA Hidratante Facial.",
-            description: "Fortalece la barrera natural de la piel, renueva sus niveles de agua, no obstruye  los poros, sin aceites, 50 g. ",
+            description: "Fortalece la barrera natural de la piel, renueva sus niveles de agua, no obstruye  los poros. ",
             img: "./img/crema.jpg",
             price: 196.00,
             deliveryTime: "Lunes 27 de mayo"
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 6,
             name: "Ufree Recortadora de barba para hombres",
-            description: "Maquinilla de afeitar eléctrica impermeable, cortadora de pelo inalámbrica, afeitadoras para hombres, kit de aseo para hombre, para nariz, bigote, cuerpo. ",
+            description: "Maquinilla de afeitar eléctrica impermeable, cortadora de pelo inalámbrica. ",
             img: "./img/maquinita.jpg",
             price: 840.00,
             deliveryTime: "Martes 28 de mayo"
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 7,
             name: "Suavecito - Pomada Original Hold",
-            description: "Esta pomada se adhiere al cabello como la cera, pero es soluble en agua. Se lava igual que un gel para el cabello: ¡lo mejor de ambos mundos!  ",
+            description: "Esta pomada se adhiere al cabello como la cera, pero es soluble en agua.  ",
             img: "./img/suavecito.jpg",
             price: 255.00,
             deliveryTime: "Lunes 27 de mayo"
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 9,
             name: "Las 48 leyes del poder",
-            description: "Robert Greene detalla las leyes del poder en su esencia más cruda, sintetizando el pensamiento de Maquiavelo, Sun Tzu, Carl von Clausewitz y otros grandes teóricos y estrategas.",
+            description: "Robert Greene detalla las leyes del poder en su esencia más cruda, sintetizando el pensamiento de Maquiavelo.",
             img: "./img/libro1.jpg",
             price: 325.00,
             deliveryTime: "Lunes 27 de mayo"
@@ -75,23 +75,23 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 10,
             name: "Este dolor no es mío.",
-            description: "Un enfoque transformador que permite resolver problemas crónicos que no han podido ser aliviados mediante la terapia tradicional, los medicamentos u otras medidas.",
+            description: "Un enfoque transformador que permite resolver problemas crónicos.",
             img: "./img/dolor.jpg",
             price: 316.00,
             deliveryTime: "Viernes 31 de mayo"
         },
         {
             id: 11,
-            name: "La teoría del todo: El origen y el destino del universo",
-            description: "Una manera clara y amena de acercarse a los misterios del universo. En esta esclarecedora obra, el gran físico británico Stephen Hawking nos ofrece una historia del universo, del big bang a los agujeros negros.",
+            name: "La teoría del todo",
+            description: "Una manera clara y amena de acercarse a los misterios del universo.",
             img: "./img/libro2.jpg",
             price: 183.00,
             deliveryTime: "Jueves 30 de mayo"
         },
         {
             id: 12,
-            name: "Historia Del Tiempo Del Big Bang A Los Agujeros",
-            description: "Stephen W. Hawking presenta de forma clara y concisa los conceptos fundamentales de la mecánica newtoniana, la teoría de la relatividad, la mecánica cuántica y la cosmología contemporánea.",
+            name: "Historia Del Tiempo",
+            description: "Stephen W. Hawking presenta de forma clara y concisa los conceptos fundamentales de la mecánica newtoniana y la teoría de la relatividad.",
             img: "./img/libro3.jpg",
             price: 307.00,
             deliveryTime: "Miercoles 29 de mayo"
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function (){
         {
             id: 19,
             name: "A|X Armani Exchange Reloj",
-            description: "Reloj cronógrafo para hombre con correa de piel, acero inoxidable o silicona, Caja Redonda de Acero Inoxidable Negro de 44 MM con Cristal Resistente a Rayones, carátula Negra y movimiento Cronógrafo.",
+            description: "Reloj cronógrafo para hombre con correa de piel, acero inoxidable o silicona.",
             img: "./img/reloj.jpg",
             price: 2300.00,
             deliveryTime: "Sabado 1 de junio"
@@ -249,14 +249,7 @@ document.addEventListener("DOMContentLoaded", function (){
             price.textContent = `Precio: $${item.price * item.quantity}`;
             cartItem.appendChild(price);
 
-            //! incrementar la cantidad del producto
-            const incrementButton = document.createElement('button');
-            incrementButton.textContent = '+';
-            incrementButton.addEventListener('click', () => {
-                item.quantity += 1;
-                updateCart();
-            });
-            titleCont.appendChild(incrementButton);
+            
 
             //! disminuir la cantidad del producto
             const decrementButton = document.createElement('button');
@@ -268,6 +261,15 @@ document.addEventListener("DOMContentLoaded", function (){
                 }
             });
             titleCont.appendChild(decrementButton);
+
+            //! incrementar la cantidad del producto
+            const incrementButton = document.createElement('button');
+            incrementButton.textContent = '+';
+            incrementButton.addEventListener('click', () => {
+                item.quantity += 1;
+                updateCart();
+            });
+            titleCont.appendChild(incrementButton);
 
             //! eliminar producto del carrito
             const deleteItem =  document.createElement('button');
