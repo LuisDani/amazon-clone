@@ -539,7 +539,6 @@ main{
     header{
         padding: 0 5px;
         justify-content: space-around;
-
     }
     header .entrega{
         display: none;
@@ -554,7 +553,9 @@ main{
         margin: 0;
         display: flex;
         flex-direction: column;
-
+    }
+    .text-carrito{
+        display: none;
     }
 }
 
