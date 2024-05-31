@@ -240,6 +240,9 @@ document.addEventListener("DOMContentLoaded", function (){
             const title = document.createElement('h4');
             title.textContent = item.name;
             titleCont.appendChild(title);
+            const delivery = document.createElement('p');
+            delivery.textContent = 'Su pedido llega el ' + item.deliveryTime;
+            titleCont.appendChild(delivery);
 
             const quantity = document.createElement('p');
             quantity.textContent = `Cantidad: ${item.quantity}`;
