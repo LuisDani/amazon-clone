@@ -260,13 +260,13 @@ main{
     place-items:center;
     gap: 10px;
     margin: 20px 30px;
+    z-index: 1;
 }
 .products-box-col{
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
     background-color: #fff;
-    z-index: 1;
     width: auto;
     align-items: center;
     justify-content: space-around;
