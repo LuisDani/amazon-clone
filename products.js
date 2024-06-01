@@ -216,6 +216,7 @@ document.addEventListener("DOMContentLoaded", function (){
         updateCart(); 
     }
 
+    
     function updateCart() {
         const cartItemsContainer = document.getElementById('cart-items');
         cartItemsContainer.innerHTML = ''; 
