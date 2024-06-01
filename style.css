@@ -408,8 +408,16 @@ main{
     .search{
         width: 55%;
     }
-
-   
+    
+   .container-slider .right{
+    right: 10%;
+   }
+   .products-box-col{
+    margin-top: 100px;
+   }
+   .header-bottom ul li{
+    font-size: 0.7rem;
+   }
 }
 
 @media only screen and (max-width: 1530px){
@@ -445,6 +453,7 @@ main{
         justify-content: center;
         align-items: center;
     }
+    
 }
 
 @media only screen and (max-width: 1430px){
@@ -478,6 +487,7 @@ main{
         justify-content: center;
         align-items: center;
     }
+    
 }
 
 @media only screen and (max-width: 1300px){
@@ -500,6 +510,7 @@ main{
         justify-content: center;
         align-items: center;
     }
+    
     
 }
 
